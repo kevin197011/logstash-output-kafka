@@ -1,0 +1,7 @@
+FROM logstash:6.8.13
+COPY logstash-output-kafka-7.3.2.gem /usr/share/logstash/
+RUN logstash-plugin remove logstash-output-kafka && rm -rf /usr/share/logstash/vendor/bundle/jruby/2.3.0/gems/logstash-output-kafka*
+RUN export http_proxy=http://192.168.211.238:1087;export https_proxy=http://192.168.211.238:1087;
+RUN logstash-plugin install --no-verify /usr/share/logstash/logstash-output-kafka-7.3.2.gem
+RUN rm -rf /usr/share/logstash/logstash-output-kafka-7.3.2.gem
+RUN unset http_proxy https_proxy

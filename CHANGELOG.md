@@ -1,14 +1,5 @@
-## 8.1.0
-  - Updated kafka client to version 2.3.0
-
-## 8.0.2
-  - Added support for `sasl_jaas_config` setting to allow JAAS config per plugin, rather than per JVM [#223](https://github.com/logstash-plugins/logstash-output-kafka/pull/223)
-
-## 8.0.1
+## 7.3.2
   - Fixed issue with unnecessary sleep after retries exhausted [#216](https://github.com/logstash-plugins/logstash-output-kafka/pull/216)
-
-## 8.0.0
-  - Removed obsolete `block_on_buffer_full`, `ssl` and `timeout_ms` options
 
 ## 7.3.1
   - Added support for kafka property `ssl.endpoint.identification.algorithm` [#213](https://github.com/logstash-plugins/logstash-output-kafka/pull/213)
