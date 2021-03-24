@@ -16,6 +16,8 @@ logstash-output-kafka-8.1.0.gem
 
 https://hub.docker.com/repository/docker/cclient/logstash
 
+```
+
 output{
     kafka {
         acks => "all"
@@ -28,3 +30,4 @@ output{
         enable_idempotence => "true"
     }
 }
+```
