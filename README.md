@@ -1,33 +1,16 @@
-## bundle install
+[root@devops-elk-ls-01 ~]# git clone https://github.com/kevin197011/logstash-output-kafka.git
+Cloning into 'logstash-output-kafka'...
+remote: Enumerating objects: 997, done.
+remote: Counting objects: 100% (72/72), done.
+remote: Compressing objects: 100% (38/38), done.
+remote: Total 997 (delta 35), reused 58 (delta 27), pack-reused 925 (from 1)
+Receiving objects: 100% (997/997), 281.76 KiB | 2.31 MiB/s, done.
+Resolving deltas: 100% (492/492), done.
 
-### build
 
-`gem build logstash-output-kafka.gemspec`
+[root@devops-elk-ls-01 ~]# cd logstash-output-kafka/
 
-### install
 
-`logstash-plugin remove logstash-output-kafka`
-
-`logstash-plugin install --no-verify logstash-output-kafka-[version].gem`
-
-logstash-output-kafka-8.1.0.gem
-
-### use
-
-https://hub.docker.com/repository/docker/cclient/logstash
-
-```
-
-output{
-    kafka {
-        acks => "all"
-        codec => "json"
-        topic_id => "test_topic"
-        bootstrap_servers =>"a:9092,b:9092,c:9092"
-        batch_size => 2048
-        max_request_size =>512000
-        max_in_flight_requests_per_connection => 1
-        enable_idempotence => "true"
-    }
-}
-```
+[root@devops-elk-ls-01 logstash-output-kafka]# /usr/share/logstash/bin/logstash-plugin reinstall --no-verify logstash-output-kafka-7.3.2.gem 
+Using bundled JDK: /usr/share/logstash/jdk
+ERROR: Installation aborted, plugin 'logstash-output-kafka' is already provided by 'logstash-integration-kafka'
