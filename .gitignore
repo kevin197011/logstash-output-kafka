@@ -3,4 +3,3 @@ Gemfile.lock
 .gradle
 .idea/
 vendor
-*.jar
